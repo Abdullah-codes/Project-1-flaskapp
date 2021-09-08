@@ -16,7 +16,7 @@ pipeline {
 
     stages {
 
-        stage('Terraform Init'){
+        stage('Init'){
             steps {
                 sh './bash-script-login.sh'
             }
