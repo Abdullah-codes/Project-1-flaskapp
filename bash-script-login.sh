@@ -11,9 +11,9 @@ echo "copying flask app"
 scp -r -i $SSH_KEY ./flask-app ubuntu@15.206.82.83:/home/ubuntu
 cp bash-script-automation.sh.template bash-script-automation.sh
 
-sed -i 's/MYSQL_ROOT_PASSWORD/$MYSQL_ROOT_PASS/g' bash-script-automation.sh
+sed -i "s/MYSQL_ROOT_PASSWORD/$MYSQL_ROOT_PASS/g" bash-script-automation.sh
 
-sed -i 's/MYSQL_USER_PASSWORD/$MYSQL_USER_PASS/g' bash-script-automation.sh
+sed -i "s/MYSQL_USER_PASSWORD/$MYSQL_USER_PASS/g" bash-script-automation.sh
 
 ssh -o StrictHostKeyChecking=no -i $SSH_KEY ubuntu@15.206.82.83 'bash -s' < ./bash-script-automation.sh
 
